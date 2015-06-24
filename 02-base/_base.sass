@@ -1,0 +1,236 @@
+@mixin blur($px: 0)
+	-webkit-filter: blur(#{$px}px) !important
+	-ms-filter: blur(#{$px}px) !important
+	-moz-filter: blur(#{$px}px) !important
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'blur\'><feGaussianBlur stdDeviation=\'#{$px}\' /></filter></svg>#blur")
+	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='#{$px}')
+
+body
+	margin: 0
+	padding: 0
+	-webkit-font-smoothing: antialiased
+	font-family: Roboto
+
+header
+	+clearfix
+	background: black
+	background-image: url(../img/bureau.jpg)
+	height: 100vh
+	background-size: cover
+	background-position: center
+	margin-bottom: 50px
+	display: -webkit-flex
+	-webkit-flex-direction: column
+	-webkit-justify-content: center
+	-webkit-align-items: center
+	+outer-container(100%)
+	
+
+section
+	+clearfix
+	+outer-container
+
+footer
+	+clearfix
+	+outer-container
+	margin-top: 5em
+	padding: 0 0 2em 0
+
+	.droite
+		float: right
+
+.cta
+	+clearfix
+	width: 100%
+	background: #F92772
+	color: #fff
+	padding: 2em
+	margin: 0
+	text-align: center
+
+	h1
+		padding: 0
+		margin: 0
+
+.entete-texte
+	background: rgba(0,0,0,0.9)
+	padding: 20px
+	margin: 0
+	
+	h1
+		color: white
+		margin: 0
+		padding: 0
+		font-size: 4em
+		text-transform: uppercase
+
+.un-quart
+	float: left
+	width: calc(25% - 20px)
+	margin: 10px
+
+.un-demi
+	+clearfix
+	+span-columns(6)
+
+.trois-quart
+	float: left
+	width: calc(75% - 20px)
+	margin: 10px
+
+.sous-titre-main
+	color: white
+	font-size: 1.5em
+	margin: 0
+	padding: 0
+	text-align: center
+	letter-spacing: 0
+	
+	a
+		text-decoration: none
+		padding: 0 0.2em
+		margin: 0
+		color: #fff
+		-webkit-transition: background 0.2s, padding 0.2s
+		transition: background 0.2s, padding 0.2s
+		transition-timing-function: ease-in-out
+
+		&:hover
+			background: #F92772
+			text-decoration: none
+			padding: 0.2em
+			+blur($px: 1)
+
+h1
+	font-size: 3em
+	margin-bottom: 0
+	font-weight: 200
+	text-transform: uppercase
+
+h2
+	margin-top: 2em
+	font-size: 2.2em
+	font-weight: 300
+	text-transform: uppercase
+	text-align: center
+
+h4
+	color: white
+	font-weight: 300
+	letter-spacing: 0.4em
+	font-size: 1.5em
+	margin-top: 0
+	padding-top: 0
+	text-transform: uppercase
+
+
+h6
+	color: white
+	font-weight: 300
+	font-size: 1em
+	padding: 0
+	margin: -30px 0 20px 0
+
+
+p
+	text-align: justify
+
+nav
+	width: 100%
+	z-index: 998
+	position: fixed
+	top: 0px
+	left: 0px
+	background: rgba(255, 255, 255, 0.8)
+	padding: 20px
+
+	ul
+		margin: 0
+		padding: 0
+		float: right
+
+		li
+			display: inline-block
+
+			a
+				text-decoration: none
+				text-transform: uppercase
+				color: #000
+				padding: 0 0.3em
+				-webkit-transition: background 0.2s, padding 0.2s
+				transition: background 0.2s, padding 0.2s
+				transition-timing-function: ease-in-out
+
+				&:hover
+					background: #F92772
+					padding: 20px 0.3em
+					color: #000
+
+.logo
+	width: 200px
+	height: 200px
+	z-index: 999
+	position: absolute
+	top: 100px
+	+calc(left, "50% - 100px")
+
+a
+	color: white
+	text-decoration: none
+
+small
+	color: #666
+
+button
+	color: #000
+	font-weight: 300
+	padding: 0.618em
+	font-size: 1.2em
+	background: none
+	border-color: #000
+	-webkit-transition: background 0.2s, color 0.2s
+	transition: background 0.2s, color 0.2s
+	transition-timing-function: ease-in-out
+
+	&:hover
+		background: #000
+		color: #fff
+		font-weight: 300
+
+
+.formations-accueil
+	+span-columns(6)
+	text-align: center
+	display: inline-block
+	margin-top: 2.5em
+	margin-bottom: 2.5em
+
+	h2
+		font-size: 1.618em
+
+	img
+		width: 200px
+		height: 200px
+
+	button
+		float: none
+
+.gallerie
+	+clearfix
+	margin: 5em 0
+
+.gal-img
+	+span-columns(4)
+
+ul.liste-avantage
+	+span-columns(6)
+	background: #efefef
+	padding: 2em
+
+	li
+		list-style-type: none
+
+
+
+
+
